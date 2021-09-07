@@ -20,7 +20,8 @@ The script ist currently using [g810-led](https://github.com/MatMoul/g810-led) t
 #### Dependencies
 
 - python3
-- python-language-server
-pip3 install python-language-server
-- 
-pip3 install pynput
+
+`apt install python3`
+
+- pip3 install pynput
+- xdotool
