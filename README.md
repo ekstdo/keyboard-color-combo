@@ -18,6 +18,4 @@ The script ist currently using [g810-led](https://github.com/MatMoul/g810-led) t
 
 ## Install on Linux
 
-
-
-
+Just download the [ColorCoding.py](https://gitlab.com/p3t1/logitech-color-combo/-/blob/main/ColorCoding.py) (if you want you can download an [example config](https://gitlab.com/p3t1/logitech-color-combo/-/blob/main/Keyboard.yaml) too)
