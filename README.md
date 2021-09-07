@@ -38,7 +38,7 @@ as command.
 
 The config consists of classes that can be imported from each other and contain both the color data of the keys and the shortcuts. Make shure you have a class called `[standard]`, which the script will use, if you havent configuered specific shortcuts or key colours for the currently active window. You can put any program name in these brackets so that the scheme is applied only to that specific program. For example, if I have a class named `[krita]`, all keyboard shortcuts written in this class will be displayed only if krita is the currently active window. If you are not sure what the process is actually called, a look at the System Monitor might be worth a try.
 
-Inside the classes you can use the following commands (key an group names are imported from g810-led):
+Inside the classes you can use the following commands (key and group names are imported from g810-led):
 
 | Command | Funtcion | Example | Explanation |
 | ------ | ------ | ------ | ------ |
