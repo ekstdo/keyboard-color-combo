@@ -3,7 +3,6 @@
 import subprocess
 import asyncio
 from pynput import keyboard
-from pprint import pprint
 import logging
 import sys, os
 state = {}
