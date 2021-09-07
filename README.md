@@ -17,8 +17,7 @@ The script ist currently using [g810-led](https://github.com/MatMoul/g810-led) t
 - GPRO
 
 ## Install on Linux
-#### Dependencies
 
-+++
+
 
 
