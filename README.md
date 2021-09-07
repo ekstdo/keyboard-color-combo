@@ -23,5 +23,8 @@ The script ist currently using [g810-led](https://github.com/MatMoul/g810-led) t
 
 `apt install python3`
 
-- pip3 install pynput
+- pynput
+
+`pip3 install pynput`
+
 - xdotool
