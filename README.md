@@ -19,12 +19,6 @@ The script ist currently using [g810-led](https://github.com/MatMoul/g810-led) t
 ## Install on Linux
 #### Dependencies
 
-- python3
++++
 
-`apt install python3`
 
-- pynput
-
-`pip3 install pynput`
-
-- xdotool
