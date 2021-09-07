@@ -1,5 +1,5 @@
 # logitech-color-combo
-A script with which you can easily display all matching key combinations on your RGB keyboard
+A script which allows you to easily display all matching key combinations on your RGB keyboard.
 
 ## Compatible Keyboards
 The script ist currently using [g810-led](https://github.com/MatMoul/g810-led) to control the LEDs of following Keyboards:
@@ -16,7 +16,7 @@ The script ist currently using [g810-led](https://github.com/MatMoul/g810-led) t
 - G910 Orion Spectrum
 - GPRO
 
-## Installation
+## Install on Linux
 #### Dependencies
 
 - python3
