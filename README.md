@@ -54,7 +54,7 @@ Inside the classes you can use the following commands (key an group names are im
 
 You can combine **c**, **m**, **x** and **s** to make bigger shortcuts, for example `cx t 00ff00` would make the T-Key green if both ctrl **and** alt are pressed
 
-With all that information we can define a simple class:
+With all that information we can define a simple config:
 
 ```
 [standard]
