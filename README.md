@@ -2,7 +2,7 @@
 A script which allows you to easily display all matching key combinations on your RGB keyboard. It automatically displays the preconfigured keyboard shortcuts based on the currently active window, also each window can have its own color scheme.
 
 ## Compatible Keyboards
-The script ist currently using [g810-led](https://github.com/MatMoul/g810-led) to control the LEDs of following Keyboards:
+The script ist currently using [g810-led](https://github.com/MatMoul/g810-led) to control the LEDs of the following Keyboards:
 - G213 Prodigy
 - G410 Atlas Spectrum
 - G413 Carbon
