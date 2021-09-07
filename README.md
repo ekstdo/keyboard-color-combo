@@ -22,7 +22,7 @@ Just download the [ColorCoding.py](https://gitlab.com/p3t1/logitech-color-combo/
 
 After you created a config file (if you haven't downloaded the example one), you can add a key to turn the script on and off:
 ##### on KDE plasma
-Go to the settings. Go to "Workspace" > "Shortcuts". In "Custom Shortcus", create a new shortcut, and instert
+Go to the settings. Go to "Workspace" > "Shortcuts". In "Custom Shortcus", create a new shortcut, and insert
 
 `/usr/bin/python3 /[path]/ColorCoding.py /[path]/Keyboard.yaml`
 
