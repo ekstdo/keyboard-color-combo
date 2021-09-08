@@ -34,7 +34,7 @@ Go to the settings. Go to "Keyboard" > "Customize Shortcuts" > "Own Shortcuts" a
 
 as command.
 
-If you run into problems with getting ther script started, take al look into "/tmp" and delete ".keyboardlock" (invisible file), and if theres a file called ".keyboardexit" delete it too.
+If you run into problems with getting ther script started, take al look into "/tmp" and delete ".keyboardlock" (invisible file), and if there's a file called ".keyboardexit" delete it too.
 
 ## Configure
 
