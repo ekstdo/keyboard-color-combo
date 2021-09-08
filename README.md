@@ -34,7 +34,7 @@ Go to the settings. Go to "Keyboard" > "Customize Shortcuts" > "Own Shortcuts" a
 
 as command.
 
-You should turn the script off before you shut down your computer, or the script may not turn on the next time you power up the computer and press the configured key. If that happens, go into /tmp and delete .keyboardlock (invisible file).
+You should turn the script off before you shut down your computer, or the script may not turn on the next time you power up the computer and press the configured key. If that happens, go into "/tmp" and delete ".keyboardlock" (invisible file).
 
 ## Configure
 
