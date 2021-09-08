@@ -54,7 +54,7 @@ Inside the classes you can use the following commands (key and group names are i
 | s | shortcut with shift | s a 0000ff | sets the colour of a to blue if shift is pressed |
 | b | block | b s | blocks the shift key, so nothing changes, if only the shift key is pressed |
 
-You can combine **c**, **m**, **x** and **s** to make bigger shortcuts, for example `cx t 00ff00` would make the T-Key green if both ctrl **and** alt are pressed
+You can combine **c**, **m**, **x** and **s** to make bigger shortcuts, for example `cx t 00ff00` would make the T-Key green if both ctrl **and** alt are pressed.
 
 With all that information we can define a simple config:
 
