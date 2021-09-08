@@ -34,6 +34,8 @@ Go to the settings. Go to "Keyboard" > "Customize Shortcuts" > "Own Shortcuts" a
 
 as command.
 
+You should turn the script off, each time before you shut down your computer, or the script may not turn on, the next time you power up the computer and press the configured key. If that happens, go into /tmp and delete .keyboardlock (invisible file).
+
 ## Configure
 
 The config consists of classes that can be imported from each other and contain both the color data of the keys and the shortcuts. Make shure you have a class called `[standard]`, which the script will use, if you havent configuered specific shortcuts or key colours for the currently active window. You can put any program name in these brackets so that the scheme is applied only to that specific program. For example, if I have a class named `[krita]`, all keyboard shortcuts written in this class will be displayed only if krita is the currently active window. If you are not sure what the process is actually called, a look at the System Monitor might be worth a try.
