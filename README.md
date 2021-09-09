@@ -27,7 +27,7 @@ The script ist currently using [g810-led](https://github.com/MatMoul/g810-led) t
 
 ### Get it to work
 
-Just download the [ColorCoding.py](https://gitlab.com/p3t1/logitech-color-combo/-/blob/main/ColorCoding.py) (if you want you can download an [example config](https://gitlab.com/p3t1/logitech-color-combo/-/blob/main/Keyboard.yaml) too), and save it anywhere you like.
+Just download the [ColorCoding.py](https://gitlab.com/p3t1/logitech-color-combo/-/blob/main/ColorCoding.py) (if you want you can download an [example config](https://gitlab.com/p3t1/logitech-color-combo/-/blob/main/Keyboard.yaml) too), and save it anywhere you like. Don't forget to make the python file executable!
 
 After you created a config file (if you haven't downloaded the example one), you can add a key to turn the script on and off:
 ##### on KDE plasma
