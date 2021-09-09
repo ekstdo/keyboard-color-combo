@@ -18,6 +18,14 @@ The script ist currently using [g810-led](https://github.com/MatMoul/g810-led) t
 
 ## Install on Linux
 
+### Dependencies
+
+- python3
+- pynput (pip3 install pynput)
+- [xdotool](https://github.com/jordansissel/xdotool)
+
+### Get it to work
+
 Just download the [ColorCoding.py](https://gitlab.com/p3t1/logitech-color-combo/-/blob/main/ColorCoding.py) (if you want you can download an [example config](https://gitlab.com/p3t1/logitech-color-combo/-/blob/main/Keyboard.yaml) too), and save it anywhere you like.
 
 After you created a config file (if you haven't downloaded the example one), you can add a key to turn the script on and off:
