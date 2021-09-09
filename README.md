@@ -20,6 +20,7 @@ The script ist currently using [g810-led](https://github.com/MatMoul/g810-led) t
 
 ### Dependencies
 
+- [g810-led](https://github.com/MatMoul/g810-led)
 - python3
 - pynput (`pip3 install pynput`)
 - [xdotool](https://github.com/jordansissel/xdotool)
