@@ -21,7 +21,7 @@ The script ist currently using [g810-led](https://github.com/MatMoul/g810-led) t
 ### Dependencies
 
 - python3
-- pynput (pip3 install pynput)
+- pynput (`pip3 install pynput`)
 - [xdotool](https://github.com/jordansissel/xdotool)
 
 ### Get it to work
