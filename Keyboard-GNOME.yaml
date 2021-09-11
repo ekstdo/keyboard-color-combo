@@ -453,19 +453,3 @@
 	k shiftl 00ff00
 	k ctrll 00ff00
 	k space 00ff00
-
-[java]
-	i games
-	k tab 0000ff
-	k m 777777
-	k 1 ffff00
-	k 2 ffff00
-	k 3 ffff00
-	k 4 ffff00
-	k 5 ffff00
-	k 6 ffff00
-	k 7 ffff00
-	k 8 ffff00
-	k 9 ffff00
-	k c 0000ff
-	k shiftr 0000ff
