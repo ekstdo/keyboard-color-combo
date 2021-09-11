@@ -155,14 +155,6 @@
 	k a ffffff
 	k s ffffff
 	k d ffffff
-	x d 0000ff
-	x b 0000ff
-	x a 0000ff
-	x e 0000ff
-	x f 0000ff
-	x r 0000ff
-	x t 0000ff
-	x h 0000ff
 
 [discord]
 	i standard
@@ -402,6 +394,17 @@
 	k d ffffff
 	c y 00ffff
 	cs y 00ffff
+	x f 0000ff
+    x e 0000ff
+    x v 0000ff
+    x i 0000ff
+    x l 0000ff
+    x s 0000ff
+    x r 0000ff
+    x t 0000ff
+    x n 0000ff
+    x w 0000ff
+    x h 0000ff
 
 [games]
 	a 777777
