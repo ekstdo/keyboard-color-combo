@@ -1,4 +1,22 @@
 [shortcuts]
+	c ctrll ffffff
+    c ctrlright ffffff
+    x altl ffffff
+    s shiftl ffffff
+    s shiftr ffffff
+    c altl 0000ff
+    c shiftl 0000ff
+    c shiftr 0000ff
+    cs altl 0000ff
+    cx shiftl 0000ff
+    cx shiftr 0000ff
+    x ctrll 0000ff
+    x ctrlright 0000ff
+    x shiftl 0000ff
+    x shiftr 0000ff
+    m altl 0000ff
+    m shiftl 0000ff
+    m shiftr 0000ff
 	c x 00ffff
 	c c 00ffff
 	c v 00ffff
