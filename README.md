@@ -65,8 +65,9 @@ Inside the classes you can use the following commands (key and group names are i
 
 You can combine **c**, **m**, **x** and **s** to make bigger shortcuts, for example `cx t 00ff00` would make the T-Key green if both ctrl **and** alt are pressed.
 
-With all that information we can define a simple config:
+Flatpaks are unfortunately all called the same. At least under KDE they are called "kthreadd", so you can only create and use one configuration for all Flatpaks together.
 
+With all that information we can define a simple config:
 ```
 [standard]
     b s
