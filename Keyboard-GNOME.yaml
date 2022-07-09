@@ -1,5 +1,5 @@
 [shortcuts]
-	c ctrll ffffff
+    c ctrll ffffff
     c ctrlright ffffff
     x altl ffffff
     s shiftl ffffff
@@ -8,8 +8,20 @@
     c shiftl 0000ff
     c shiftr 0000ff
     cs altl 0000ff
+    cs shiftl ffffff
+    cs shiftr ffffff
+    cs ctrll ffffff
+    cs ctrlright ffffff
     cx shiftl 0000ff
     cx shiftr 0000ff
+    cx ctrll ffffff
+    cx ctrlright ffffff
+    cx altl ffffff
+    csx shiftl ffffff
+    csx shiftr ffffff
+    csx ctrll ffffff
+    csx ctrlright ffffff
+    csx altl ffffff
     x ctrll 0000ff
     x ctrlright 0000ff
     x shiftl 0000ff
