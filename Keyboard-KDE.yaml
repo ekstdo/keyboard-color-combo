@@ -8,8 +8,20 @@
     c shiftl 0000ff
     c shiftr 0000ff
     cs altl 0000ff
+    cs shiftl ffffff
+    cs shiftr ffffff
+    cs ctrll ffffff
+    cs ctrlright ffffff
     cx shiftl 0000ff
     cx shiftr 0000ff
+    cx ctrll ffffff
+    cx ctrlright ffffff
+    cx altl ffffff
+    csx shiftl ffffff
+    csx shiftr ffffff
+    csx ctrll ffffff
+    csx ctrlright ffffff
+    csx altl ffffff
     x ctrll 0000ff
     x ctrlright 0000ff
     x shiftl 0000ff
@@ -17,6 +29,12 @@
     m altl 0000ff
     m shiftl 0000ff
     m shiftr 0000ff
+    m winleft ffffff
+    mx winleft ffffff
+    mx altl ffffff
+    ms winleft ffffff
+    ms shiftl ffffff
+    ms shiftr ffffff
     c x 00ffff
     c c 00ffff
     c v 00ffff
@@ -85,6 +103,22 @@
     x f1 0000ff
     ms tab 00ffff
     m w 00ffff
+    m k 00ffff
+    m home 00ffff
+    m end 00ffff
+    m intl_backslash 00ffff
+    m t 00ffff
+    m f1 ffff00
+    m f2 ffff00
+    m f3 ffff00
+    m f4 ffff00
+    m esc ffff00
+    m slash 00ffff
+    m close_bracket 00ffff
+    c f10 00ffff
+    c f7 00ffff
+    c f12 00ffff
+    m q 00ffff
 
 [standard]
     i shortcuts
