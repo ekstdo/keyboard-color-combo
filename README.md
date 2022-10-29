@@ -27,7 +27,7 @@ The script ist currently using [g810-led](https://github.com/MatMoul/g810-led) t
 
 ### Get it to work
 
-Just download the [ColorCoding.py](https://gitlab.com/p3t1/logitech-color-combo/-/blob/main/ColorCoding.py) (if you want you can download an example config for [KDE](https://gitlab.com/p3t1/logitech-color-combo/-/blob/main/Keyboard-KDE.yaml) or [GNOME](https://gitlab.com/p3t1/logitech-color-combo/-/blob/main/Keyboard-GNOME.yaml) too), and save it anywhere you like. Don't forget to make the python file executable!
+Just download the [ColorCoding.py](https://github.com/Peti253/logitech-color-combo/blob/main/ColorCoding.py) (if you want you can download the [example config](https://github.com/Peti253/logitech-color-combo/blob/main/Keyboard.yaml), tested on KDE), and save it anywhere you like. Don't forget to make the python file executable!
 
 After you created a config file (if you haven't downloaded the example one), you can add a key to turn the script on and off:
 ##### on KDE plasma
@@ -35,9 +35,9 @@ Go to the settings. Go to "Workspace" > "Shortcuts". In "Custom Shortcus", creat
 
 `/usr/bin/python3 /[path]/ColorCoding.py /[path]/Keyboard.yaml`
 
-under "Action". If you're not using Keyboard-[DE].yaml as config, make shure to change it to the name of your config file.
+under "Action". If you're not using Keyboard.yaml as config, make shure to change it to the name of your config file.
 ##### on GNOME
-Go to the settings. Go to "Keyboard" > "Customize Shortcuts" > "Own Shortcuts" and click on "Add Shortcut". Insert
+Open the settings. Go to "Keyboard" > "Customize Shortcuts" > "Own Shortcuts" and click on "Add Shortcut". Insert
 
 `/usr/bin/python3 /[path]/ColorCoding.py /[path]/Keyboard.yaml`
 
