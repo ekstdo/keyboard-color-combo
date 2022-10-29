@@ -119,6 +119,10 @@
     c f7 00ffff
     c f12 00ffff
     m q 00ffff
+    ms arrowleft ff6600
+    ms arrowright ff6600
+    c tab 00ffff
+    cs tab 00ffff
 
 [standard]
     i shortcuts
@@ -196,10 +200,16 @@
     k numplus 00ffff
     k num. 00ffff
     k capslock 0000ff
-    k open_bracket 00ffff
-    k close_bracket 00ffff
-    k semicolon 00ffff
-    k quote 00ffff
+
+[plasmashell]
+    i standard
+    k w ffffff
+    k a ffffff
+    k s ffffff
+    k d ffffff
+    x d ffffff
+    x a ff00ff
+    x s ff00ff
 
 [firefox]
     i standard
@@ -215,6 +225,7 @@
     c q ff0000
     c pageup ff6600
     c pagedown ff6600
+    c tab 00ffff
     cs pageup ff6600
     cs pagedown ff6600
     x 1 ffff00
@@ -264,6 +275,22 @@
     k a ffffff
     k s ffffff
     k d ffffff
+    x d 0000ff
+    x b 0000ff
+    x a 0000ff
+    x e 0000ff
+    x f 0000ff
+    x r 0000ff
+    x t 0000ff
+    x o 0000ff
+    x x 0000ff
+    x s 0000ff
+    x h 0000ff
+    c h 00ffff
+    c t 00ffff
+    cs k 00ffff
+    c 8 00ffff
+    c 9 00ffff
 
 [dolphin]
     i standard
@@ -310,6 +337,7 @@
     k a ffffff
     k s ffffff
     k d ffffff
+    xs f4 00ffff
 
 [discord]
     i standard
@@ -348,13 +376,30 @@
     c 0 00ffff
     c quote 00ffff
     c t 00ffff
+    c 1 ffff00
+    c 2 ffff00
+    c 3 ffff00
+    c 4 ffff00
+    c 5 ffff00
+    c 6 ffff00
+    c 7 ffff00
+    c 8 ffff00
+    c 9 ffff00
     k w ffffff
     k a ffffff
     k s ffffff
     k d ffffff
+    cs i 00ffff
+    cs c 00ffff
 
 [blender]
     i standard
+    b x
+    b xs
+    b c
+    b xc
+    b cs
+    b csx
     c o 00ff00
     c n 00ff00
     c s 00ffff
@@ -362,6 +407,8 @@
     c e 00ffff
     c f 00ffff
     c y 00ffff
+    c b 00ffff
+    cs b 00ffff
     cs y 00ffff
     c space 00ffff
     c tab 00ffff
@@ -378,6 +425,10 @@
     k a ffffff
     k s ffffff
     k d ffffff
+    k r ff6600
+    k g ff6600
+    k h ff6600
+    k s ff6600
 
 [konsole]
     i standard
@@ -421,8 +472,21 @@
     cs k 00ffff
     cx u 00ffff
     c tab 00ffff
+    c x 000000
+    c c 000000
+    c v 000000
+    c c 00ffff
+    c 1 ffff00
+    c 2 ffff00
+    c 3 ffff00
+    c 4 ffff00
+    c 5 ffff00
+    c 6 ffff00
+    c 7 ffff00
+    c 8 ffff00
+    c 9 ffff00
 
-[kate]
+[kwrite]
     i standard
     k w ffffff
     k a ffffff
@@ -509,6 +573,15 @@
     cx f 00ffff
     c tab 00ffff
     cs tab 00ffff
+    x d 0000ff
+    x b 0000ff
+    x a 0000ff
+    x p 0000ff
+    x l 0000ff
+    x s 0000ff
+    x x 0000ff
+    x e 0000ff
+    x h 0000ff
 
 [kdenlive]
     i standard
@@ -565,6 +638,16 @@
     x arrowleft ff6600
     c arrowleft ff6600
     c arrowright ff6600
+    x d 0000ff
+    x b 0000ff
+    x a 0000ff
+    x p 0000ff
+    x w 0000ff
+    x c 0000ff
+    x i 0000ff
+    x m 0000ff
+    x e 0000ff
+    x h 0000ff
 
 [kontact]
     i standard
@@ -625,6 +708,11 @@
     c 3 ffff00
     c 6 ffff00
     c 1 ffff00
+    x d 0000ff
+    x a 0000ff
+    x b 0000ff
+    x i 0000ff
+    x h 0000ff
 
 [krita]
     i standard
@@ -661,6 +749,39 @@
     x w 0000ff
     x h 0000ff
 
+[vlc]
+    i standard
+    k f ff6600
+    k m ff6600
+    k w ffffff
+    k a ffffff
+    k s ffffff
+    k d ffffff
+    c o 00ff00
+    cs o 00ff00
+    c f 00ff00
+    c d 00ff00
+    c n 00ff00
+    c c 00ff00
+    c v 00ff00
+    c 1 00ff00
+    c 2 00ff00
+    c 3 00ff00
+    c 4 00ff00
+    c 5 00ff00
+    c y 00ffff
+    c r 00ffff
+    c s 00ffff
+    c q ff0000
+    c e 00ffff
+    c i 00ffff
+    c j 00ffff
+    cs w 00ffff
+    c m 00ffff
+    c p 00ffff
+    c l 00ffff
+    c h 00ffff
+    
 [games]
     a 777777
     b s
@@ -708,3 +829,473 @@
     k shiftl 00ff00
     k ctrll 00ff00
     k space 00ff00
+   
+[java]
+    i games
+    k m 777777
+    k 1 ffff00
+    k 2 ffff00
+    k 3 ffff00
+    k 4 ffff00
+    k 5 ffff00
+    k 6 ffff00
+    k 7 ffff00
+    k 8 ffff00
+    k 9 ffff00
+    k shiftr 0000ff
+    k c ff0000
+    k tab 0000ff
+    
+[virtualboxvm]
+    b s
+    b c
+    b x
+    b m
+    b cs
+    b cm
+    b cx
+    b xs
+    b xm
+    b ms
+    b cxm
+    b cxms
+    b xms
+    b cxs
+    b cms
+    a ffffff
+    g modifiers 0000ff
+    k num. 00ffff
+    k f12 ff00ff
+    k f11 8c00ff
+    k f10 1500ff
+    k f9 005eff
+    k f8 00d0ff
+    k f7 00ffbb
+    k f6 00ff44
+    k f5 2fff00
+    k f4 a2ff00
+    k f3 ffea00
+    k f2 ff7300
+    k f1 ff0000
+    k esc ff0000
+    k del ff0000
+    k backspace ff0000
+    k 1 ffff00
+    k 2 ffff00
+    k 3 ffff00
+    k 4 ffff00
+    k 5 ffff00
+    k 6 ffff00
+    k 7 ffff00
+    k 8 ffff00
+    k 9 ffff00
+    k 0 ffff00
+    k num1 ffff00
+    k num2 ffff00
+    k num3 ffff00
+    k num4 ffff00
+    k num5 ffff00
+    k num6 ffff00
+    k num7 ffff00
+    k num8 ffff00
+    k num9 ffff00
+    k num0 ffff00
+    k arrowbottom ff6600
+    k arrowtop ff6600
+    k arrowleft ff6600
+    k arrowright ff6600
+    k w ff6600
+    k a ff6600
+    k s ff6600
+    k d ff6600
+    k print ff00ff
+    k scrolllock ff00ff
+    k pause ff00ff
+    k ins ff00ff
+    k home ff00ff
+    k end ff00ff
+    k pageup ff00ff
+    k pagedown ff00ff
+    k enter 00ff00
+    k numenter 00ff00 
+    k tilde 00ffff
+    k minus 00ffff
+    k equal 00ffff
+    k comma 00ffff
+    k period 00ffff
+    k slash 00ffff
+    k tab 00ffff
+    k dollar 00ffff
+    k close_bracket 00ffff
+    k intl_backslash 00ffff
+    k numlock 00ffff
+    k numslash 00ffff
+    k num* 00ffff
+    k numminus 00ffff
+    k numplus 00ffff
+    k num. 00ffff
+    k capslock 0000ff
+    
+[starwarsbattlef]
+    i games
+    k t 777777
+    k m 777777
+    k altl 00ff00
+    k x 00ff00
+    k 1 ff0000
+    k 2 ff0000
+    k v ff0000
+    k g ff0000
+    k tab 0000ff
+    k c 0000ff
+    k u 0000ff
+    k i 0000ff
+    k h 0000ff
+    k r ff0000
+
+[transportfever2]
+    i games
+    k m 777777
+    k t 777777
+    k shiftl 777777
+    k ctrll 777777
+    k space ff0000
+    k tab ff0000
+    k comma ff0000
+    k period ff0000
+    k n ff0000
+    k m ff0000
+    k q 007700
+    k e 007700
+    k r 007700
+    k f 007700
+    k z 007700
+    k x 007700
+    k b ff0000
+    k v 0000ff
+    k l 0000ff
+    k 1 0000ff
+    k 2 0000ff
+    k 3 0000ff
+    k 4 0000ff
+    k 5 0000ff
+    k num1 0000ff
+    k num2 0000ff
+    k num3 0000ff
+    k num4 0000ff
+    k num5 0000ff
+    k num6 0000ff
+    k num7 0000ff
+    k num8 0000ff
+    k num9 0000ff
+
+[ts2prototype-wi]
+    i games
+    k t 777777
+    k m 777777
+    k semicolon 00ff00
+    k quote 00ff00
+    k shiftl 0000ff
+    k ctrll 0000ff
+    k space ff0000
+    k n ff0000
+    k period 00ff00
+    k comma 00ff00
+    k r 00ff00
+    k f 00ff00
+    k h ff0000
+    k i ff0000
+    k v ff0000
+    k l ff0000
+    k y ff0000
+    k u ff0000
+    k t 0000ff
+    k tab 0000ff
+    k 9 0000ff
+    k 1 ffff00
+    k 2 ffff00
+    k 3 ffff00
+    k 8 ffff00
+
+[witcher3.exe]
+    i games
+    k r ff0000
+    k t ff0000
+    k y ff0000
+    k i ff0000
+    k n ff0000
+    k m ff0000
+    k x ff0000
+    k tab 0000ff
+    k 1 ffff00
+    k 2 ffff00
+    k 3 ffff00
+    k 4 ffff00
+    k 5 ffff00
+    k 6 ffff00
+    k 7 ffff00
+    k home 0000ff
+    k k ff0000
+    k j ff0000
+    k l ff0000
+    k o ff0000
+    k b ff0000 
+    k g ff0000
+   
+[gta5.exe]
+    i games
+    k z 0000ff
+    k v 0000ff
+    k capslock ff0000
+    k altl 0000ff
+    k m 0000ff
+    k home 0000ff
+    k c 0000ff
+    k g ff0000
+    k r ff0000
+    k tab ff0000
+
+[cities.x64]
+    i games
+    k space ff0000
+    k t 777777
+    k m 777777
+    k q 00ff00
+    k e 00ff00
+    k f 777777
+    k b ff0000
+    k v ff0000
+    k r 00ff00
+    k f 00ff00
+    k z 00ff00
+    k x 00ff00
+    k shiftl 777777
+    k ctrll 777777
+    k y ff0000
+    
+[metroexodus]
+    i games
+    k m 777777
+    k t ff0000
+    k x 00ff00
+    k z 00ff00
+    k r ff0000
+    k h ff0000
+    k v ff0000
+    k tab ff0000
+    k 1 ffff00
+    k 2 ffff00
+    k 3 ffff00
+    k g ff0000
+    k i 0000ff
+    k f ff0000
+    k l ff0000
+    k m 0000ff
+    k q ff0000
+    k n 0000ff
+    k b 0000ff
+    k y 0000ff
+
+[acu.exe]
+    i games
+    k v ff0000
+    k r ff0000
+    k z ff0000
+    k tab 0000ff
+    k 1 ffff00
+    k 2 ffff00
+    k 3 ffff00
+    k 4 ffff00
+    k 5 ffff00
+    k 6 ffff00
+    k 7 ffff00
+    k 8 ffff00
+    k 9 ffff00
+    k m 777777
+    k t 777777
+    
+[hitman2.exe]
+    i games
+    k b ff0000
+    k t ff0000
+    k x ff0000
+    k r ff0000
+    k v ff0000
+    k c ff0000
+    k z ff0000
+    k g ff0000
+    k u ff0000
+    k m 0000ff
+    k altl 00ff00
+    k tab 777777
+    
+[freetube]
+    i standard
+    k w ffffff
+    k a ffffff
+    k s ffffff
+    k d ffffff
+    k j ff6600
+    k k ff6600
+    k l ff6600
+    k space ff6600
+    k f ff6600
+    k m ff6600
+    k d ff6600
+    c r 00ffff
+    c l 00ffff
+
+[electronplayer]
+    i standard
+    k w ffffff
+    k a ffffff
+    k s ffffff
+    k d ffffff
+    c h 00ffff
+    k k ff6600
+    k space ff6600
+    k f ff6600
+    k m ff6600
+    
+[teams]
+    i standard
+    #Allgemein
+    k w ffffff
+    k a ffffff
+    k s ffffff
+    k d ffffff
+    c period 00ffff
+    cs 7 00ffff
+    c g 00ffff
+    c n 00ff00
+    c comma 00ffff
+    c slash 00ffff
+    c e 00ffff
+    cs f 00ffff
+    c cs n 00ff00
+    c close_bracket 00ffff
+    c 0 00ffff
+    #Navigation
+    c 1 ffff00
+    c 2 ffff00
+    c 3 ffff00
+    c 4 ffff00
+    c 5 ffff00
+    c 6 ffff00
+    c 7 ffff00
+    x arrowbottom ff6600
+    x arrowtop ff6600
+    cs arrowleft ff6600
+    cs arrowright ff6600
+    cs h 00ffff
+    cs f6 00ffff
+    c f6 00ffff
+    #Nachrichten
+    xs c 00ffff
+    xs r 00ffff
+    cs x 00ffff
+    c enter 00ffff
+    c o 00ffff
+    c f 00ffff
+    #Besprechung, Anrufe und Kalender
+    cs a 00ff00
+    cs d ff0000
+    cs s 00ff00
+    cs c 00ff00
+    cs u 00ff00
+    cs l 00ffff
+    cs k 00ffff
+    cs space 00ffff
+    cs d ff0000
+    cs a 00ff00
+    xs n 00ff00
+    x period 00ffff
+    cx arrowleft ff6600
+    cx arrowright ff6600
+    cx 1 ff6600
+    cx 2 ff6600
+    cx 3 ff6600
+    c s 00ffff
+    xs j 00ffff
+    xs s ff6600
+    
+[rcu_gp]
+    i teams
+    cs i 00ffff
+
+[rdr2.exe]
+    i games
+    k p 0000ff
+    k c 0000ff
+    k r ff0000
+    k t 777777
+    k h ff0000
+    k b ff0000
+    k v 0000ff
+    k g ff0000
+    k y ff0000
+    k u ff0000
+    k tab 0000ff
+    k capslock ff0000
+    k close_bracket 222266
+    k open_bracket 222266
+    k 1 ffff00
+    k 2 ffff00
+    k 3 ffff00
+    k 4 ffff00
+    k 5 ffff00
+    k 6 ffff00
+    k 7 ffff00
+    k 8 ffff00
+    k enter ff0000
+    k backspace ff0000
+    k num5 00ff00
+    k num4 00ff00
+    k num6 00ff00
+    k num8 00ff00
+    k altl 0000ff
+    k i ff0000
+
+[forzahorizon5.e]
+    i games
+    k q 777777
+    k e 777777
+    k r ff0000
+    k v 0000ff
+    k c 0000ff
+    k enter ff0000
+    k tab 0000ff
+    k p 0000ff
+    k h ff0000
+    k close_bracket 0000ff
+    k dollar 0000ff
+    k shiftl 777777
+    k ctrll 777777
+    k numenter ff0000
+
+[kthreadd]
+    i standard
+    k w ffffff
+    k a ffffff
+    k s ffffff
+    k d ffffff
+    b x
+    b xs
+    b c
+    b xc
+    b cs
+    b csx
+
+[zoom]
+    i standard
+    cx minus 00ffff
+    x v 00ffff
+    x a 00ffff
+    x m 00ffff
+    x s 00ffff
+    x t 00ffff
+    x r 00ffff
+    x c 00ffff
+    x p 00ffff
+    x n 00ffff
+    x q ff0000
