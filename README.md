@@ -2,48 +2,22 @@
 A script which allows you to easily display all matching key combinations on your RGB keyboard. It automatically displays the preconfigured keyboard shortcuts based on the currently active window, also each window can have its own color scheme.
 
 ## Compatible Keyboards
-The script ist currently using [g810-led](https://github.com/MatMoul/g810-led) to control the LEDs of the following Keyboards:
-- G213 Prodigy
-- G410 Atlas Spectrum
-- G413 Carbon
-- G512 Carbon
-- G513 Carbon
-- G610 Orion Brown
-- G610 Orion Red
-- G810 Orion Spectrum
-- G815 LIGHTSYNC
-- G910 Orion Spark
-- G910 Orion Spectrum
-- GPRO
+haven't tested yet, but should be compatible with all keyboards that work with Aura Sync / Aura Creator (works on my Laptop keyboard)
 
 ## Install on Linux
 
 ### Dependencies
 
-- [g810-led](https://github.com/MatMoul/g810-led)
-- python3
-- pynput (`pip3 install pynput`)
-- [xdotool](https://github.com/jordansissel/xdotool)
+- python
+- pynput (`pip install pynput`)
+- pywin32 (`pip install pywin32`)
+- asyncio (`pip install asyncio`)
+- wmi (`pip install wmi`)
 
 ### Get it to work
 
 Just download the [ColorCoding.py](https://github.com/Peti253/logitech-color-combo/blob/main/ColorCoding.py) (if you want you can download the [example config](https://github.com/Peti253/logitech-color-combo/blob/main/Keyboard.yaml), tested on KDE), and save it anywhere you like. Don't forget to make the python file executable!
-
-After you created a config file (if you haven't downloaded the example one), you can add a key to turn the script on and off:
-##### on KDE plasma
-Go to the settings. Go to "Workspace" > "Shortcuts". In "Custom Shortcus", create a new shortcut, and insert
-
-`/usr/bin/python3 /[path]/ColorCoding.py /[path]/Keyboard.yaml`
-
-under "Action". If you're not using Keyboard.yaml as config, make shure to change it to the name of your config file.
-##### on GNOME
-Open the settings. Go to "Keyboard" > "Customize Shortcuts" > "Own Shortcuts" and click on "Add Shortcut". Insert
-
-`/usr/bin/python3 /[path]/ColorCoding.py /[path]/Keyboard.yaml`
-
-as command.
-
-If you run into problems with getting ther script started, take al look into "/tmp" and delete ".keyboardlock" (invisible file), and if there's a file called ".keyboardexit" delete it too.
+When starting the script while it's running, it kills itself. This way you can set a hotkey (e.g. with AutoHotkey) to start and stop the Script
 
 ## Configure
 
