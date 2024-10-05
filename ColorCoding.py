@@ -1,4 +1,3 @@
-
 #!/usr/bin/python3
 
 
@@ -6,6 +5,8 @@
 import subprocess
 import asyncio
 import sys, os
+import tempfile
+import warnings
 
 # external library
 from pynput import keyboard
@@ -198,13 +199,23 @@ class ASUSAuraSDKAPI:
         self.commit()
 
     def changekey(self, keyx, rgb):
+        if keyx not in ASUSAuraSDKAPI.keycodes:
+            warnings.warn(f"{keyx} is an unknown key and not in the dictionary!")
+            return
+
+
         bgr = ASUSAuraSDKAPI.decodecolor(rgb)
         for dev in self.devices:
+            if dev.Type not in [0x80000, 0x00081000]:
+                continue
             keycode = ASUSAuraSDKAPI.keycodes[keyx]
-            if dev.Type in [0x80000, 0x00081000]:
+            if type(keycode) is int:
                 dev.Keys(keycode - 1).color = bgr
+            else:
+                for i in keycode:
+                    dev.Keys(keycode - 1).color = bgr
 
-    def changeall (self, rgb):
+    def changeall(self, rgb):
         bgr = ASUSAuraSDKAPI.decodecolor(rgb)
         for dev in self.devices:
             for i in range(dev.Lights.Count):
@@ -213,7 +224,6 @@ class ASUSAuraSDKAPI:
     def commit(self):
         for dev in self.devices:
             dev.Apply()
-
 
     def decodecolor(rgb):
         bgr = rgb[4:6] + rgb[2:4] + rgb[0:2]
@@ -243,8 +253,8 @@ blockstate = {}
 cache = open (".tmp","w")
 current = "standard"
 keystate = 0 #Shift(s), Ctrl(c), Meta(m), Alt(x)
-lockfilename = "/tmp/.keyboardlock"
-terminatorfilename = "/tmp/.keyboardexit"
+lockfilename = tempfile.gettempdir() + "/.keyboardlock"
+terminatorfilename = tempfile.gettempdir() + "/.keyboardexit"
 
 if os.path.exists(lockfilename):
     terminator = open(terminatorfilename,"a")
@@ -305,10 +315,10 @@ def loadfile(filename):
         blockstate[program].extend(list(set(i for innerlist in blocked2d for i in innerlist)))
 
 
-def onpress (key):
+def onpress(key):
     global keystate
     lastkeystate = keystate
-    key=str(key).strip("'")
+    key = str(key).strip("'")
     if key == "Key.shift" or key == "Key.shift_r":
         keystate = keystate | 0b1000
     if key == "Key.ctrl" or key == "Key.ctrl_r" or key == "Key.ctrl_l":
@@ -320,10 +330,10 @@ def onpress (key):
     if lastkeystate != keystate:
         render()
 
-def onrelease (key):
+def onrelease(key):
     global keystate
     lastkeystate = keystate
-    key=str(key).strip("'")
+    key = str(key).strip("'")
     if key == "Key.shift" or key == "Key.shift_r":
         keystate = keystate & 0b0111
     if key == "Key.ctrl" or key == "Key.ctrl_r" or key == "Key.ctrl_l":
@@ -351,8 +361,6 @@ listener.start()
 loadfile ("Keyboard.yaml" if len(sys.argv) == 1 else sys.argv[1])
 
 onrelease (None)
-
-
 
 async def mainloop():
     global current
