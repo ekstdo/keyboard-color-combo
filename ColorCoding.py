@@ -288,7 +288,6 @@ async def mainloop():
             break
         oldwindowname = current
         windowname = findactivewindow()
-        print(bin(keystate))
         if oldwindowname != windowname and windowname in state.keys():
             current = windowname
             render()
