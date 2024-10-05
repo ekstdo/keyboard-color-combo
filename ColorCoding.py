@@ -4,12 +4,30 @@
 # Standard library
 import subprocess
 import asyncio
-import sys, os
+import sys
+import os
 import tempfile
 import warnings
+import argparse
 
 # external library
 from pynput import keyboard
+
+if os.name == "nt":
+    import wmi
+    import win32process
+    import win32gui
+    import win32com
+
+# constants
+
+YELLOW = "\033[93m"
+GREEN = "\033[92m"
+CLEAR = "\033[0m"
+
+lockfilename = tempfile.gettempdir() + "/.keyboardlock"
+terminatorfilename = tempfile.gettempdir() + "/.keyboardexit"
+
 
 class LinuxProgramGetter:
     def __init__(self):
@@ -18,24 +36,24 @@ class LinuxProgramGetter:
     def find_active_window():
         result = None
         try:
-            result = subprocess.check_output(["xdotool", "getwindowfocus", "getwindowpid"]).decode("utf-8").strip()
-        except:
+            result = subprocess.check_output(
+                    ["xdotool", "getwindowfocus", "getwindowpid"]
+                ).decode("utf-8").strip()
+        except subprocess.CalledProcessError:
             pass
         if result != "":
-            processfile = open (f"/proc/{result}/comm")
+            processfile = open(f"/proc/{result}/comm")
             process = processfile.read()
             processfile.close()
             return process.lower().strip()
         return None
 
+
 class WindowsProgramGetter:
     def __init__(self):
-        import wmi
         self.c = wmi.WMI()
 
     def find_active_window(self):
-        import win32process
-        import win32gui
         exe = None
         _, pid = win32process.GetWindowThreadProcessId(win32gui.GetForegroundWindow())
         for p in self.c.query('SELECT Name FROM Win32_Process WHERE ProcessId = %s' % str(pid)):
@@ -47,32 +65,28 @@ class WindowsProgramGetter:
             exe = exe.lower()
         return exe
 
-print(f"detecting os: {os.name}")
-program_getter = LinuxProgramGetter() if os.name == "posix" else WindowsProgramGetter() if os.name == "nt" else None
-if program_getter is None:
-    raise Exception("Unsupported Operating System")
-
 
 class LogitechG810API:
     def __init__(self):
         pass
 
-    def run (self, *args):
-        subprocess.run(["g810-led",*args])
+    def run(self, *args):
+        subprocess.run(["g810-led", *args])
 
     def process(self, key_configs):
-        cache = open (".tmp","w")
+        cache = open(".tmp", "w")
         for k in key_configs:
             if k == "k" or k == "g" or k == "a":
                 cache.write(" ".join(k) + "\n")
             else:
                 cache.write("k "+" ".join(k[1:]) + "\n")
-        cache.write ("c")
+        cache.write("c")
         cache.close()
-        self.run ("-p",".tmp")
+        self.run("-p", ".tmp")
 
-    def changeall (self, color):
-        self.run ("-an",color)
+    def changeall(self, color):
+        self.run("-an", color)
+
 
 class ASUSAuraSDKAPI:
     keycodes = {
@@ -182,9 +196,7 @@ class ASUSAuraSDKAPI:
         "fn": 0x0100
     }
 
-
     def __init__(self):
-        import win32com
         self.auraSdk = win32com.client.Dispatch("aura.sdk.1")
         self.auraSdk.SwitchMode()
         self.devices = self.auraSdk.Enumerate(0)
@@ -195,14 +207,13 @@ class ASUSAuraSDKAPI:
             if str(k[0]) == "a":
                 self.changeall(k[1])
             else:
-                self.changekey(k[1],k[2])
+                self.changekey(k[1], k[2])
         self.commit()
 
     def changekey(self, keyx, rgb):
         if keyx not in ASUSAuraSDKAPI.keycodes:
-            warnings.warn(f"{keyx} is an unknown key and not in the dictionary!")
+            warnings.warn(f"{keyx} is an unknown and not in the dictionary!")
             return
-
 
         bgr = ASUSAuraSDKAPI.decodecolor(rgb)
         for dev in self.devices:
@@ -230,41 +241,12 @@ class ASUSAuraSDKAPI:
         return int(bgr, 16)
 
 
-
-
-
-
-print("detecting keyboard")
-try:
-    subprocess.run(["g810-led", "-h"])
-    api = LogitechG810API()
-
-    print("Using the Logitech G810 API")
-except:
-    print("Logitech G810 API not found, using ASUS Aura SDK API")
-    api = ASUSAuraSDKAPI()
-
-
-
-
 state = {}
 importstate = {}
 blockstate = {}
-cache = open (".tmp","w")
 current = "standard"
-keystate = 0 #Shift(s), Ctrl(c), Meta(m), Alt(x)
-lockfilename = tempfile.gettempdir() + "/.keyboardlock"
-terminatorfilename = tempfile.gettempdir() + "/.keyboardexit"
+keystate = 0  # Shift(s), Ctrl(c), Meta(m), Alt(x)
 
-if os.path.exists(lockfilename):
-    terminator = open(terminatorfilename,"a")
-    terminator.write("astala vista baby")
-    terminator.close()
-    sys.exit()
-else:
-    lockfile = open(lockfilename,"a")
-    lockfile.write ("wer das liest ist dumm")
-    lockfile.close()
 
 def encoding(x):
     enc = 0
@@ -278,12 +260,13 @@ def encoding(x):
         enc = enc | 0b0001
     return enc
 
+
 def loadfile(filename):
-    cfgfile = open (filename)
+    cfgfile = open(filename)
     lines = (cfgfile.readlines())
-    strippedlines = map (lambda line: line.strip ("\t\n "), lines)
-    filteredlines = filter (lambda line: line != "", strippedlines)
-    splitlines = map (lambda line: line.split(), filteredlines)
+    strippedlines = map(lambda line: line.strip("\t\n "), lines)
+    filteredlines = filter(lambda line: line != "", strippedlines)
+    splitlines = map(lambda line: line.split(), filteredlines)
     currentprogram = "standard"
     for line in splitlines:
         if line[0].startswith("["):
@@ -301,7 +284,7 @@ def loadfile(filename):
             if line[0][0] in "scmx":
                 line[0] = encoding(line[0])
             state[currentprogram].append(line)
-    for program,modulelist in importstate.items():
+    for program, modulelist in importstate.items():
         modules = []
         while len(modulelist) > 0:
             module = modulelist.pop()
@@ -310,8 +293,9 @@ def loadfile(filename):
             modules.append(module)
             modulelist.extend(importstate[module])
         importstate[program] = modules
-    for program,modulelist in importstate.items():
-        blocked2d = map(lambda module: blockstate[module],modulelist)
+
+    for program, modulelist in importstate.items():
+        blocked2d = map(lambda module: blockstate[module], modulelist)
         blockstate[program].extend(list(set(i for innerlist in blocked2d for i in innerlist)))
 
 
@@ -330,6 +314,7 @@ def onpress(key):
     if lastkeystate != keystate:
         render()
 
+
 def onrelease(key):
     global keystate
     lastkeystate = keystate
@@ -344,7 +329,8 @@ def onrelease(key):
         keystate = keystate & 0b1110
     if lastkeystate != keystate:
         render()
-        
+
+
 def render():
     keylist = state[current]
     for module in importstate[current]:
@@ -353,23 +339,19 @@ def render():
         api.process(filter(lambda k: k[0] == "k" or k[0] == "g" or k[0] == "a", keylist))
     elif keystate not in blockstate[current]:
         api.changeall("000000")
-        api.process(filter (lambda k:k[0] == keystate, keylist))
-    
-listener=keyboard.Listener (on_press=onpress,on_release=onrelease)
-listener.start()
+        api.process(filter(lambda k: k[0] == keystate, keylist))
 
-loadfile ("Keyboard.yaml" if len(sys.argv) == 1 else sys.argv[1])
 
-onrelease (None)
-
-async def mainloop():
+async def mainloop(debug_mode=False):
     global current
     while True:
         await asyncio.sleep(0.1)
-        if os.path.exists(terminatorfilename):
+        if os.path.exists(terminatorfilename) and not debug_mode:
+            warnings.warn("Terminator file exists! Terminating...")
             os.remove(terminatorfilename)
-            os.remove(lockfilename)
-            break
+            if os.path.exists(lockfilename):
+                os.remove(lockfilename)
+                break
         oldwindowname = current
         windowname = program_getter.find_active_window()
         if oldwindowname != windowname and windowname in state.keys():
@@ -381,4 +363,58 @@ async def mainloop():
             current = "standard"
             render()
 
-asyncio.run(mainloop())
+
+if __name__ == "__main__":
+    parser = argparse.ArgumentParser(
+                prog='ColorCoding',
+                description='Configure your keyboard RGB colors',
+                epilog='')
+    parser.add_argument('filename', default="Keyboard.yaml")
+    parser.add_argument('-d', '--debug', action='store_true')
+
+    args = parser.parse_args()
+
+    if os.path.exists(lockfilename) and not args.debug:
+        warnings.warn("Lockfile exists!")
+
+        terminator = open(terminatorfilename, "a")
+        terminator.write("astala vista baby")
+        terminator.close()
+        sys.exit()
+    else:
+        lockfile = open(lockfilename, "a")
+        lockfile.write("wer das liest ist dumm")
+        lockfile.close()
+
+    if args.debug:
+        if os.path.exists(terminatorfilename):
+            os.remove(terminatorfilename)
+
+    print(f"detecting os: {os.name}")
+    program_getter = LinuxProgramGetter() if os.name == "posix" \
+        else WindowsProgramGetter() if os.name == "nt" else None
+    if program_getter is None:
+        raise Exception("Unsupported Operating System")
+
+    print("detecting keyboard")
+    try:
+        subprocess.run(["g810-led", "-h"])
+        api = LogitechG810API()
+
+        print("{GREEN}Using the Logitech G810 API{CLEAR}")
+    except:
+        print("Logitech G810 API not found, {GREEN}using ASUS Aura SDK API{CLEAR}")
+        api = ASUSAuraSDKAPI()
+
+    print(f"{YELLOW}[KEYBOARD] Started keyboard listener{CLEAR}")
+    listener = keyboard.Listener(on_press=onpress, on_release=onrelease)
+    listener.start()
+    print(f"{GREEN}[KEYBOARD] Keyboard listener started!{CLEAR}")
+
+    print(f"{YELLOW}[CONFIG] loading config {args.filename}{CLEAR}")
+    loadfile(args.filename)
+    onrelease(None)
+    print(f"{GREEN}[CONFIG] config loaded!{CLEAR}")
+
+    print(f"{GREEN}[MAINLOOP] starting mainloop!{CLEAR}")
+    asyncio.run(mainloop(debug_mode=args.debug))
